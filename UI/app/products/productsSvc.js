@@ -1,9 +1,7 @@
 angular.module("products")
     .service("productsSvc", [function() {
         this.getProducts = function() {
-            return
-
-            [{
+            return [{
                     "_id": "58a3c64c252a52c818362c05",
                     "index": 0,
                     "picture": "http://placehold.it/32x32",

@@ -9,6 +9,12 @@
             </tr>
         </thead>
         <tbody>
+            <tr ng-repeat="item in pc.products">
+                <td>{{item.index}}</td>
+                <td>{{item.Model}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.Price}}</td>
+            </tr>
         </tbody>
     </table>
 
