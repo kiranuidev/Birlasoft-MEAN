@@ -7,8 +7,13 @@
 </head>
 
 <body>
+    <div ng-controller="mainCtrl as mc">
+        <div ng-include="mc.headerUrl"></div>
+        <div ng-include="mc.content"></div>
+    </div>
 
     <script src="app/register/register.js"></script>
+    <script src="app/register/registerCtrl.js"></script>
     <script src="app/app.js"></script>
 </body>
 
