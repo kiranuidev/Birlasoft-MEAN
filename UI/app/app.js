@@ -1,5 +1,5 @@
 //module creating
-angular.module("snapkart", ["register"]);
+angular.module("snapkart", ["register", "common"]);
 
 //Controller syntax.
 //Every controller belongs to a module

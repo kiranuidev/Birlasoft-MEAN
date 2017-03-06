@@ -1,4 +1,4 @@
-<form class="form-horizontal">
+<form class="form-horizontal" ng-controller="registerCtrl as rc">
     <div class="form-group">
         <label class="col-lg-2 control-label">User Name</label>
         <div class="col-lg-4">
@@ -27,7 +27,7 @@
     <div class="form-group">
         <label class="col-lg-2 control-label">Country</label>
         <div class="col-lg-4">
-            <select class="form-control">
+            <select class="form-control" ng-model="rc.user.country" ng-options="country.name for country in rc.countries">
                <option value="">Select Country</option>
            </select>
         </div>
