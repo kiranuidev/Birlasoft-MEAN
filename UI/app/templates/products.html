@@ -19,6 +19,8 @@
                 <td>{{item.Model}}</td>
                 <td>{{item.Description}}</td>
                 <td>{{item.Price|currency:"Rs."}}</td>
+                <td><button class="btn btn-primary" ng-if="!item.isAdded" ng-click="pc.addToCart(item)">Add To cart</button>
+                    <button class="btn btn-danger" ng-if="item.isAdded" ng-click="pc.removeFromCart(item)">Remove from cart</button></td>
             </tr>
         </tbody>
     </table>
