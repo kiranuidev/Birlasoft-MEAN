@@ -1,5 +1,5 @@
 angular.module("products")
-    .service("productsSvc", [function() {
+    .service("productsSvc", ["$http", "$q", function($http, $q) {
         this.getProducts = function() {
             return [{
                     "_id": "58a3c64c252a52c818362c05",
@@ -546,5 +546,22 @@ angular.module("products")
                     "Description": "Hello, undefined! You have 6 unread messages."
                 }
             ];
-        }
+        };
+        this.getProductsFromJson = function() {
+            //step 1:create deferred object 
+            // ex: var dfd = $q.defer();
+            var dfd = $q.defer();
+            //Making http calls
+            $http.get("/api/products.json")
+                .then(function(response) {
+                    dfd.resolve(response);
+                })
+                .catch(function(response) {
+                    dfd.reject(response);
+                });
+
+
+            //step2: return the promise from the defered object.
+            return dfd.promise;
+        };
     }])
