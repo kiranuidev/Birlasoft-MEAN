@@ -1,4 +1,7 @@
 <div ng-controller="productsCtrl as pc">
+
+    <input type="text" ng-model="pc.search">
+    <uib-pagination total-items="pc.pagination.totalItems" ng-model="pc.pagination.currentPage" ng-change="pc.pageChanged()"></uib-pagination>
     <table class="table table-striped table-hover ">
         <thead>
             <tr>
@@ -9,15 +12,17 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="item in pc.products">
+            <!--<tr ng-repeat="item in pc.products|filter:pc.search">-->
+            <tr ng-repeat="item in pc.productsToBind|filter:{Price:pc.search}">
+                <!--<td>{{$index+1}}</td>-->
                 <td>{{item.index}}</td>
                 <td>{{item.Model}}</td>
                 <td>{{item.Description}}</td>
-                <td>{{item.Price}}</td>
+                <td>{{item.Price|currency:"Rs."}}</td>
             </tr>
         </tbody>
     </table>
-
+    <uib-pagination total-items="pc.pagination.totalItems" ng-model="pc.pagination.currentPage" ng-change="pc.pageChanged()"></uib-pagination>
 
 
 
