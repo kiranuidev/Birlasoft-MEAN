@@ -564,4 +564,28 @@ angular.module("products")
             //step2: return the promise from the defered object.
             return dfd.promise;
         };
-    }])
+    }]);
+
+angular.module("products")
+    .factory("productsFac", ["$http", "$q", function($http, $q) {
+
+        return {
+            getProductsFromJson: function() {
+                //step 1:create deferred object 
+                // ex: var dfd = $q.defer();
+                var dfd = $q.defer();
+                //Making http calls
+                $http.get("/api/products.json")
+                    .then(function(response) {
+                        dfd.resolve(response);
+                    })
+                    .catch(function(response) {
+                        dfd.reject(response);
+                    });
+
+
+                //step2: return the promise from the defered object.
+                return dfd.promise;
+            }
+        }
+    }]);

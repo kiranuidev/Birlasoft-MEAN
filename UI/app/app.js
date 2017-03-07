@@ -12,4 +12,7 @@ angular.module("snapkart")
             var baseUrl = "app/templates/";
             vm.content = baseUrl + type + ".html"
         };
+        vm.click = function() {
+            console.log("handle user click");
+        };
     }]);
