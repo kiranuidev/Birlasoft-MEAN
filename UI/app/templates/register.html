@@ -1,14 +1,30 @@
-<form class="form-horizontal" ng-controller="registerCtrl as rc">
+<form class="form-horizontal" ng-controller="registerCtrl as rc" novalidate name="registerForm">
     <div class="form-group">
         <label class="col-lg-2 control-label">User Name</label>
         <div class="col-lg-4">
-            <input type="text" class="form-control" placeholder="User Name">
+            <input type="text" class="form-control" placeholder="User Name" ng-model="rc.user.username" ng-pattern="/^[A-z]+$/" bs-checkuser ng-required="true" name="username">
         </div>
+        <p ng-show="registerForm.username.$error.required 
+        && registerForm.username.$dirty">UserName required</p>
+        <p ng-show="registerForm.username.$error.checkuser">User already exists</p>
+        <p ng-show="registerForm.username.$error.pattern">Invalid username</p>
     </div>
     <div class="form-group">
         <label class="col-lg-2 control-label">Email</label>
         <div class="col-lg-4">
             <input type="text" class="form-control" placeholder="Email">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Reservation</label>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" mindate="0D" maxdate="3M" ng-model="rc.user.reservation" bs-calendar placeholder="Reservation">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">DOB</label>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" ng-model="rc.user.dob" maxdate="0D" bs-calendar placeholder="DOB">
         </div>
     </div>
     <div class="form-group">
