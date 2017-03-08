@@ -2,7 +2,7 @@
     <div class="form-group">
         <label class="col-lg-2 control-label">User Name</label>
         <div class="col-lg-4">
-            <input type="text" class="form-control" placeholder="User Name" ng-model="rc.user.username" ng-pattern="/^[A-z]+$/" bs-checkuser ng-required="true" name="username">
+            <input type="text" class="form-control" placeholder="User Name" ng-model="rc.user.username" bs-checkuser ng-required="true" name="username">
         </div>
         <p ng-show="registerForm.username.$error.required 
         && registerForm.username.$dirty">UserName required</p>
@@ -50,7 +50,7 @@
     </div>
     <div class="form-group">
         <div class="col-lg-4 col-lg-offset-2">
-            <button type="button" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" ng-click="rc.registerUser()">Submit</button>
         </div>
     </div>
 </form>

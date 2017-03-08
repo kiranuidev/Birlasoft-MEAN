@@ -1,0 +1,12 @@
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
+var buf = fs.readFileSync(filename, "utf8");
