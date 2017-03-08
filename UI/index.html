@@ -8,6 +8,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js">
     </script>
     <script src="vendor/ui-bootstrap-tpls-0.14.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
 </head>
 
 <body>
@@ -17,17 +18,18 @@
 
     <div ng-controller="mainCtrl as mc">
         <div bs-header></div>
+        <div ui-view></div>
         <!--<div ng-include="mc.headerUrl"></div>-->
-        <div ng-include="mc.content"></div>
+        <!--<div ng-include="mc.content"></div>
         <button type="button" class="btn btn-primary" bs-click="mc.click()">Click Me</button>
         <div class="panel panel-default" bs-toggle>
             <div class="panel-heading">Test</div>
             <div class="panel-body">
 
                 I am the content
-            </div>
+            </div>-->
 
-        </div>
+    </div>
     </div>
     <script src="app/products/products.js"></script>
     <script src="app/products/productsSvc.js"></script>
