@@ -1,21 +1,16 @@
 var express = require("express");
+var morgan = require("morgan");
+var bodyParser = require("body-parser");
 var app = express();
+app.use(morgan("combined"));
 
-function login(req, res) {
-    //res.send("<h1>Login</h1>")
-    res.sendFile(__dirname + "/views/login.html");
-}
+// parse application/json
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(bodyParser.json());
+app.set('view engine', 'ejs');
+//define routes.
+require("../app/login/login.route")(app);
 
-function register(req, res) {
-    res.send("<h1>Register</h1>")
-}
 
-function any(req, res) {
-    res.send("<h1>Welcome</h1>")
-}
-
-app.get("/", any);
-app.get("/login", login);
-app.get("/register", register);
 
 module.exports = app;
