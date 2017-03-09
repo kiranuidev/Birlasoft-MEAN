@@ -1,0 +1,40 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+</head>
+<body>
+<form method="post">
+<input type="text" name="Model" placeholder="Model">
+<input type="text" name="Price" placeholder="Price">
+<table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+              <% products.forEach(function(item) { %>
+              <tr>
+              <td><%= item.index %></td>
+              <td><%= item.Model %></td>
+              <td><%= item.Description %></td>
+              <td><%= item.Price %></td>
+              </tr>
+      
+    <% }); %>
+           
+        </tbody>
+    </table>
+
+
+
+
+
+
+<button type="submit" class="btn btn-warning">Search</button></form>
+</body>
+</html>
