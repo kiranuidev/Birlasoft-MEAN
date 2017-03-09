@@ -13,7 +13,7 @@ var mongodb = function() {
         console.log("database connected");
     });
     //import your models
-
+    require("../app/register/register.model");
 }
 
 module.exports = mongodb;
