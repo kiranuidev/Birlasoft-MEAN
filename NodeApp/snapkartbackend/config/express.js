@@ -11,6 +11,7 @@ app.set('view engine', 'ejs');
 //define routes.
 require("../app/login/login.route")(app);
 require("../app/register/register.route")(app);
+require("../app/products/product.route")(app);
 
 
 module.exports = app;
