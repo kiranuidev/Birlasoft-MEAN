@@ -11,6 +11,7 @@ registerCtrl.post = function(req, res) {
     var doc = new userSchema(req.body);
     doc.save(function(err, data) {
         if (err) {
+            console.log(err.errors.age.message);
             res.render("register", {
                 showSuccess: true,
                 message: "Something Went Wrong"
@@ -28,6 +29,7 @@ registerCtrl.post = function(req, res) {
 registerCtrl.getUsers = function(req, res) {
     userSchema.find({}, function(err, data) {
         if (err) {
+            console.log(err);
             res.json({ error: "Something went wrong" });
         } else {
             res.json(data);
