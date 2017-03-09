@@ -1,0 +1,54 @@
+<html>
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+</head>
+<body>
+<% if(!showSuccess){ %>
+<form class="form-horizontal" method="post" action="/user/register">
+  
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" name="email"placeholder="Email">
+      </div>
+    </div>
+    <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">User Name</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" name="username"  placeholder="UserName">
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Password</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" name="password"  placeholder="Password">
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Phone</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" name="phone"  placeholder="Phone">
+      </div>
+    </div>
+     <div class="form-group">
+      <label for="inputEmail" class="col-lg-2 control-label">Age</label>
+      <div class="col-lg-4">
+        <input type="text" class="form-control" name="age"  placeholder="Age">
+      </div>
+    </div>
+     <div class="form-group">
+      
+      <div class="col-lg-4 col-lg-offset-2">
+        <button type="submit" class="btn btn-warning">Submit</button>
+      </div>
+    </div>
+    
+    
+</form>
+<% } else { %>
+<div class="alert alert-success">Registered Successfully</div>
+<% } %>
+
+
+</body>
+</html>

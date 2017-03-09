@@ -10,7 +10,7 @@ app.use(bodyParser.json());
 app.set('view engine', 'ejs');
 //define routes.
 require("../app/login/login.route")(app);
-
+require("../app/register/register.route")(app);
 
 
 module.exports = app;
