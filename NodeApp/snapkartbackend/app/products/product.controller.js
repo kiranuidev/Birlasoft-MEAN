@@ -13,30 +13,30 @@ productCtrl.postMany = function(req, res) {
 };
 
 productCtrl.search = function(req, res) {
-    var criteria = req.body;
-    console.log(criteria)
-        //or query
-    productSchema.find(
-        // {
-        //     // //$in query
-        //     // "Model": {
-        //     //     $in: ["iPad", "iPhone", "Lenovo"]
-        //     // }
-        //     // // $or: [{
-        //     // //         Model: criteria.model
-        //     // //     },
-        //     // //     { Price: criteria.price }
-        //     // // ]
-        // },
-        criteria,
-        function(err, data) {
-            if (err) {
-                console.log(err);
-                res.json({ "error": "Error Occured" });
-            } else {
-                res.render("products", { products: data });
-            }
-        });
+    // var criteria = req.body;
+    // console.log(criteria)
+    //     //or query
+    // productSchema.find(
+    //     // {
+    //     //     // //$in query
+    //     //     // "Model": {
+    //     //     //     $in: ["iPad", "iPhone", "Lenovo"]
+    //     //     // }
+    //     //     // // $or: [{
+    //     //     // //         Model: criteria.model
+    //     //     // //     },
+    //     //     // //     { Price: criteria.price }
+    //     //     // // ]
+    //     // },
+    //     criteria,
+    //     function(err, data) {
+    //         if (err) {
+    //             console.log(err);
+    //             res.json({ "error": "Error Occured" });
+    //         } else {
+    //             res.json(data);
+    //         }
+    //     });
 
 
     //search products by price
@@ -63,6 +63,14 @@ productCtrl.search = function(req, res) {
     //         res.json(data);
     //     }
     // })
+    productSchema.find({}, function(err, data) {
+        if (err) {
+            console.log(err);
+            res.json({ "error": "Error Occured" });
+        } else {
+            res.json(data);
+        }
+    })
 };
 
 module.exports = productCtrl;

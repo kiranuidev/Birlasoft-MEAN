@@ -4,16 +4,16 @@ var bcrypt = require('bcryptjs');
 
 //step 2 define schema..
 var user = {
-    username: { type: String, unique: true, lowercase: true },
+    username: { type: String, unique: true, lowercase: true, required: true },
     phone: { type: Number, required: [true, "Phone number is required"] },
     email: { type: String },
     age: { type: Number, min: [18, "Minimum age is 18"], max: [99, "maximum age is 99"] },
     password: { type: String, required: true }
 };
 //ste3
-var schema = mongoose.Schema(user);
+var userSchema = mongoose.Schema(user);
 
-schema.pre('save', function(next) {
+userSchema.pre('save', function(next) {
     // do stuff
     var user = this;
     if (user.password) {
@@ -35,5 +35,13 @@ schema.pre('save', function(next) {
     }
 });
 
+userSchema.methods.comparePassword = function(passw, cb) {
+    bcrypt.compare(passw, this.password, function(err, isMatch) {
+        if (err) {
+            return cb(err);
+        }
+        cb(null, isMatch);
+    });
+};
 //register the schema with mongoose.
-mongoose.model("user", schema);
+mongoose.model("user", userSchema);

@@ -1,0 +1,50 @@
+<html ng-app="snapkart">
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/slate/bootstrap.min.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.js" integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular.min.js">
+    </script>
+    <script src="vendor/ui-bootstrap-tpls-0.14.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.4.2/angular-ui-router.js"></script>
+</head>
+
+<body>
+    <!--<bs-header></bs-header>
+    <div bs-header></div>
+    <div class="bs-header"></div>-->
+
+    <div ng-controller="mainCtrl as mc">
+        <div bs-header></div>
+        <div ui-view></div>
+        <!--<div ng-include="mc.headerUrl"></div>-->
+        <!--<div ng-include="mc.content"></div>
+        <button type="button" class="btn btn-primary" bs-click="mc.click()">Click Me</button>
+        <div class="panel panel-default" bs-toggle>
+            <div class="panel-heading">Test</div>
+            <div class="panel-body">
+
+                I am the content
+            </div>-->
+
+    </div>
+    </div>
+    <script src="app/products/products.js"></script>
+    <script src="app/products/productsSvc.js"></script>
+    <script src="app/products/productsCtrl.js"></script>
+    <script src="app/common/common.js"></script>
+    <script src="app/common/commonLookupSvc.js"></script>
+    <script src="app/common/commonBsHeader.js"></script>
+    <script src="app/common/commonbsClick.js"></script>
+    <script src="app/common/commonbsCheckuser.js"></script>
+    <script src="app/common/commonPhoneformat.js"></script>
+    <script src="app/common/commonbsCalendar.js"></script>
+    <script src="app/register/register.js"></script>
+    <script src="app/register/registerSvc.js"></script>
+    <script src="app/register/registerCtrl.js"></script>
+    <script src="app/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,63 @@
+<form class="form-horizontal" novalidate name="registerForm">
+    <div class="alert alert-danger" ng-if="rc.showErrorMessage">Registration Failed. Please try later.</div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">User Name</label>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" placeholder="User Name" ng-model="rc.user.username" ng-required="true" name="username">
+        </div>
+        <p ng-show="registerForm.username.$error.required 
+        && registerForm.username.$dirty">UserName required</p>
+        <p ng-show="registerForm.username.$error.checkuser">User already exists</p>
+        <p ng-show="registerForm.username.$error.pattern">Invalid username</p>
+    </div>
+    <div class="form-group">
+        <label class="col-lg-2 control-label">Email</label>
+        <div class="col-lg-4">
+            <input type="text" class="form-control" placeholder="Email" ng-model="rc.user.email">
+        </div>
+    </div>
+    <div class=" form-group ">
+        <label class="col-lg-2 control-label ">Reservation</label>
+        <div class="col-lg-4 ">
+            <input type="text " class="form-control " mindate="0D " maxdate="3M " ng-model="rc.user.reservation " bs-calendar placeholder="Reservation ">
+        </div>
+    </div>
+    <div class="form-group ">
+        <label class="col-lg-2 control-label ">DOB</label>
+        <div class="col-lg-4 ">
+            <input type="text " class="form-control " ng-model="rc.user.age " placeholder="Age">
+        </div>
+    </div>
+    <div class="form-group ">
+        <label class="col-lg-2 control-label ">Phone</label>
+        <div class="col-lg-4 ">
+            <input type="text " class="form-control " ng-model="rc.user.phone " placeholder="Age">
+        </div>
+    </div>
+    <div class="form-group ">
+        <label class="col-lg-2 control-label ">Password</label>
+        <div class="col-lg-4 ">
+            <input type="password " ng-model="rc.user.password" class="form-control " placeholder="Password ">
+        </div>
+    </div>
+    <div class="form-group ">
+        <label class="col-lg-2 control-label ">Gender</label>
+        <div class="col-lg-4 ">
+            <input type="radio " value="M " name="gender ">Male
+            <input type="radio " value="F " name="gender ">Female
+        </div>
+    </div>
+    <div class="form-group ">
+        <label class="col-lg-2 control-label ">Country</label>
+        <div class="col-lg-4 ">
+            <select class="form-control " ng-model="rc.user.country " ng-options="country.name for country in rc.countries ">
+               <option value=" ">Select Country</option>
+           </select>
+        </div>
+    </div>
+    <div class="form-group ">
+        <div class="col-lg-4 col-lg-offset-2 ">
+            <button type="button " class="btn btn-primary " ng-click="rc.registerUser() ">Submit</button>
+        </div>
+    </div>
+</form>

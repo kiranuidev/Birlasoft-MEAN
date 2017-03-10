@@ -1,0 +1,31 @@
+<div>
+
+    <input type="text" ng-model="pc.search">
+    <uib-pagination total-items="pc.pagination.totalItems" ng-model="pc.pagination.currentPage" ng-change="pc.pageChanged()"></uib-pagination>
+    <table class="table table-striped table-hover ">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Model</th>
+                <th>Description</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!--<tr ng-repeat="item in pc.products|filter:pc.search">-->
+            <tr ng-repeat="item in pc.productsToBind|filter:{Price:pc.search}">
+                <!--<td>{{$index+1}}</td>-->
+                <td>{{item.index}}</td>
+                <td>{{item.Model}}</td>
+                <td>{{item.Description}}</td>
+                <td>{{item.Price|currency:"Rs."}}</td>
+                <td><button class="btn btn-primary" ng-if="!item.isAdded" ng-click="pc.addToCart(item)">Add To cart</button>
+                    <button class="btn btn-danger" ng-if="item.isAdded" ng-click="pc.removeFromCart(item)">Remove from cart</button></td>
+            </tr>
+        </tbody>
+    </table>
+    <uib-pagination total-items="pc.pagination.totalItems" ng-model="pc.pagination.currentPage" ng-change="pc.pageChanged()"></uib-pagination>
+
+
+
+</div>
